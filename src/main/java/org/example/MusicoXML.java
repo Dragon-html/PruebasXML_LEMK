@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -107,6 +108,17 @@ public class MusicoXML {
 
 						texto = documento.createTextNode(Musico.getFrontman());
 						nodoFrontman.appendChild(texto);
+
+
+						Element nodoDiscos = documento.createElement("discos");
+						nodoMusico.appendChild(nodoDiscos);
+
+						for(String disco : Musico.getListaDiscos()){
+							Element nodoDisco = documento.createElement("disco");
+							Text textoDisco = documento.createTextNode(disco);
+							nodoDisco.appendChild(textoDisco);
+							nodoDiscos.appendChild(nodoDisco);
+						}
 					}
 					
 					// Una vez tenemos nuestro �rbol DOM creado, hay que tranformarlo a nuestro fichero XML
@@ -201,6 +213,10 @@ public class MusicoXML {
 						System.out.print(elemento.getAttribute("pais_de_origen"));
 						System.out.print(" ");
 
+							System.out.print(elemento.getAttribute("listaDiscos"));
+							System.out.print(" ");
+
+
 
 						System.out.println();
 						/*
@@ -223,9 +239,9 @@ public class MusicoXML {
 				
 				ArrayList<Musico> listaMusicos = null;
 				
-				Musico Musico1 = new Musico("The Wonder Years", 2005,"Punk-Pop", "Pedro Pascal", "Watermelon", "Bolivia");
-				Musico Musico2 = new Musico("La Polla Records", 1980, "Punk", "Jovani", "EuroChina", "Venezuela");
-				Musico Musico3 = new Musico("Phoebe Bridgers", 2012, "Indie-folk", "Pedro Sánchez", "PeruRecords", "Guatemala");
+				Musico Musico1 = new Musico("The Wonder Years", 2005,"Punk-Pop", "Pedro Pascal", "Watermelon", "Bolivia", new ArrayList<>(Arrays.asList("Huevo crudo", "Pedro")));
+				Musico Musico2 = new Musico("La Polla Records", 1980, "Punk", "Jovani", "EuroChina", "Venezuela", new ArrayList<>(Arrays.asList("Huevo 2", "3")));
+				Musico Musico3 = new Musico("Phoebe Bridgers", 2012, "Indie-folk", "Pedro Sánchez", "PeruRecords", "Guatemala", new ArrayList<>(Arrays.asList("Crudo", "Sandia")));
 				
 				listaMusicos = new ArrayList<Musico>();
 				listaMusicos.add(Musico1);

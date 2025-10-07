@@ -1,6 +1,7 @@
 package org.example;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Musico {
@@ -15,11 +16,11 @@ public class Musico {
 	private String discografica;
 	private String pais_de_origen;
 
-	private String[] discos;
+	private ArrayList<String> listaDiscos;
 
 
 	
-	public Musico(String nombre, int formacion, String genero, String frontman, String discografica, String pais_de_origen, String[] discos) {
+	public Musico(String nombre, int formacion, String genero, String frontman, String discografica, String pais_de_origen, ArrayList<String> listaDiscos) {
 		super();
 		this.nombre = nombre;
 		this.formacion = formacion;
@@ -30,7 +31,7 @@ public class Musico {
 		this.discografica = discografica;
 		this.pais_de_origen = pais_de_origen;
 
-		this.discos = discos;
+		this.listaDiscos = listaDiscos;
 	}
 	
 	public String getNombre() {
@@ -68,12 +69,12 @@ public class Musico {
 		this.pais_de_origen = pais_de_origen;
 	}
 
-	public String[] getDiscos() {
-		return discos;
+	public ArrayList<String> getListaDiscos() {
+		return listaDiscos;
 	}
 
-	public void setDiscos(String[] discos) {
-		this.discos = discos;
+	public void setListaDiscos(ArrayList<String> listaDiscos) {
+		this.listaDiscos = listaDiscos;
 	}
 
 	@Override
@@ -85,7 +86,7 @@ public class Musico {
 				", frontman='" + frontman + '\'' +
 				", discografica='" + discografica + '\'' +
 				", pais_de_origen='" + pais_de_origen + '\'' +
-				", discos=" + Arrays.toString(discos) +
+				", listaDiscos=" + listaDiscos +
 				'}';
 	}
 }

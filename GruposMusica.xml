@@ -5,17 +5,29 @@
         <anyo_formacion>2005</anyo_formacion>
         <genero>Punk-Pop</genero>
         <frontman>Pedro Pascal</frontman>
+        <discos>
+            <disco>Huevo crudo</disco>
+            <disco>Pedro</disco>
+        </discos>
     </Musico>
     <Musico discografica="EuroChina" pais_de_origen="Venezuela">
         <nombre>La Polla Records</nombre>
         <anyo_formacion>1980</anyo_formacion>
         <genero>Punk</genero>
         <frontman>Jovani</frontman>
+        <discos>
+            <disco>Huevo 2</disco>
+            <disco>3</disco>
+        </discos>
     </Musico>
     <Musico discografica="PeruRecords" pais_de_origen="Guatemala">
         <nombre>Phoebe Bridgers</nombre>
         <anyo_formacion>2012</anyo_formacion>
         <genero>Indie-folk</genero>
         <frontman>Pedro Sánchez</frontman>
+        <discos>
+            <disco>Crudo</disco>
+            <disco>Sandia</disco>
+        </discos>
     </Musico>
 </Musicos>
